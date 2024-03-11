@@ -1,0 +1,50 @@
+{
+  "name": "@tinijs/default-prebuilder",
+  "version": "0.0.1",
+  "description": "Prebuild TiniJS apps using the default strategy.",
+  "author": "Lam Nhan",
+  "homepage": "https://tinijs.dev",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": "./public-api.js",
+  "types": "./public-api.d.ts",
+  "files": [
+    "lib",
+    "public-api.*",
+    "!**/*.ts",
+    "**/*.d.ts",
+    "!test"
+  ],
+  "scripts": {
+    "compile": "tsc",
+    "build": "npm run compile",
+    "lint": "gts lint",
+    "fix": "gts fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tinijs/builders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tinijs/builders/issues"
+  },
+  "peerDependencies": {
+    "@tinijs/cli": "file:../../cli/tinijs-cli-0.16.0.tgz",
+    "tinijs": "file:../../tinijs/tinijs-0.16.0.tgz"
+  },
+  "dependencies": {
+    "sass": "^1.71.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "gts": "^5.2.0",
+    "type-fest": "^4.11.1",
+    "typescript": "~5.3.3"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@tinijs/vite-builder",
+  "version": "0.0.1",
+  "description": "Build TiniJS apps using Vite.",
+  "author": "Lam Nhan",
+  "homepage": "https://tinijs.dev",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": "./public-api.js",
+  "types": "./public-api.d.ts",
+  "files": [
+    "lib",
+    "public-api.*",
+    "!**/*.ts",
+    "**/*.d.ts",
+    "!test"
+  ],
+  "scripts": {
+    "compile": "tsc",
+    "build": "npm run compile",
+    "lint": "gts lint",
+    "fix": "gts fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tinijs/builders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tinijs/builders/issues"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "gts": "^5.2.0",
+    "typescript": "~5.3.3"
+  }
+}
