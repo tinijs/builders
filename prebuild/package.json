@@ -39,9 +39,12 @@
     "tinijs": "file:../../tinijs/tinijs-0.16.0.tgz"
   },
   "dependencies": {
+    "fs-extra": "^11.2.0",
+    "pathe": "^1.1.2",
     "sass": "^1.71.1"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.11.24",
     "gts": "^5.2.0",
     "type-fest": "^4.11.1",
