@@ -5,25 +5,23 @@
   "author": "Lam Nhan",
   "homepage": "https://tinijs.dev",
   "license": "MIT",
-  "type": "module",
   "engines": {
     "node": ">=18.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "exports": "./public-api.js",
-  "types": "./public-api.d.ts",
+  "type": "module",
+  "exports": {
+    ".": "./dist/public-api.js"
+  },
   "files": [
-    "lib",
-    "public-api.*",
-    "!**/*.ts",
-    "**/*.d.ts",
-    "!test"
+    "dist",
+    "!**/*.spec.*"
   ],
   "scripts": {
-    "compile": "tsc",
-    "build": "npm run compile",
+    "build": "rimraf ./dist && tsc",
+    "test": "vitest run",
     "lint": "gts lint",
     "fix": "gts fix"
   },
@@ -36,7 +34,7 @@
   },
   "peerDependencies": {
     "@tinijs/cli": "file:../../cli/tinijs-cli-0.16.0.tgz",
-    "tinijs": "file:../../tinijs/tinijs-0.16.0.tgz"
+    "@tinijs/core": "file:../../core/tinijs-core-0.16.0.tgz"
   },
   "dependencies": {
     "@parcel/packager-raw-url": "^2.12.0",
@@ -49,6 +47,8 @@
   "devDependencies": {
     "@types/node": "^20.11.24",
     "gts": "^5.2.0",
-    "typescript": "~5.3.3"
+    "rimraf": "^5.0.5",
+    "typescript": "~5.3.3",
+    "vitest": "^1.4.0"
   }
 }

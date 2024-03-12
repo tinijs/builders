@@ -1,4 +1,4 @@
-import {TiniConfig, Builder} from 'tinijs';
+import {TiniApp, Builder} from '@tinijs/core';
 import {getIndexHtmlPath} from '@tinijs/cli';
 
 export interface BuildOptions {
@@ -8,15 +8,15 @@ export interface BuildOptions {
 }
 
 export default function (options: BuildOptions = {}) {
-  return function (tiniConfig: TiniConfig) {
-    return new ParcelBuilder(options, tiniConfig);
+  return function (tiniApp: TiniApp) {
+    return new ParcelBuilder(options, tiniApp);
   };
 }
 
 export class ParcelBuilder implements Builder {
   constructor(
     private options: BuildOptions,
-    private tiniConfig: TiniConfig
+    private tiniApp: TiniApp
   ) {}
 
   get build() {
@@ -33,8 +33,8 @@ export class ParcelBuilder implements Builder {
   }
 
   private get commands() {
-    const {outDir} = this.tiniConfig;
-    const indexHtmlPath = getIndexHtmlPath(this.tiniConfig);
+    const {outDir} = this.tiniApp.config;
+    const indexHtmlPath = getIndexHtmlPath(this.tiniApp.config);
     return {
       buildCommand:
         this.options.buildCommand ||
