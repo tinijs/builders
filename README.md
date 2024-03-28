@@ -1,5 +1,8 @@
 # TiniJS Builders
 
+> [!IMPORTANT]
+> This previously experiment is wrapped up, moving forward the development will happen at <https://github.com/tinijs/tinijs>.
+
 Official prebuilders and builders for TiniJS apps.
 
 ## Default Prebuilder
